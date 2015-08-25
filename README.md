@@ -1,0 +1,1 @@
+# aws-schema-swagger-converter
