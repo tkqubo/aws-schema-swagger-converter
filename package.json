@@ -26,6 +26,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "request": "^2.61.0"
+    "request": "^2.61.0",
+    "swagger.d.ts": "0.0.2"
   }
 }
