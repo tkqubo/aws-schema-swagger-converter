@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && gulp && node build/bundle.js",
+    "start": "tsc && node index.js",
     "install": "tsd --config tsd.json reinstall",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +24,8 @@
     "lodash": "^3.10.1",
     "rx": "^3.1.1",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "request": "^2.61.0"
   }
 }

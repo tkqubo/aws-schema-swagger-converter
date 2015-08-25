@@ -7,7 +7,6 @@
   },
   "files": [
     "index.ts",
-    "gulpfile.ts",
     "typings/tsd.d.ts"
   ]
 }
