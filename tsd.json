@@ -1,0 +1,30 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "browserify/browserify.d.ts": {
+      "commit": "2cc76fbebfa9b91f1629a9b43095ee91f2fdc3f6"
+    },
+    "node/node.d.ts": {
+      "commit": "2cc76fbebfa9b91f1629a9b43095ee91f2fdc3f6"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "2cc76fbebfa9b91f1629a9b43095ee91f2fdc3f6"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "2cc76fbebfa9b91f1629a9b43095ee91f2fdc3f6"
+    },
+    "rx/rx.d.ts": {
+      "commit": "2cc76fbebfa9b91f1629a9b43095ee91f2fdc3f6"
+    },
+    "rx/rx-lite.d.ts": {
+      "commit": "2cc76fbebfa9b91f1629a9b43095ee91f2fdc3f6"
+    },
+    "vinyl-source-stream/vinyl-source-stream.d.ts": {
+      "commit": "2cc76fbebfa9b91f1629a9b43095ee91f2fdc3f6"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "aws-schema-swagger-converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && gulp && node build/bundle.js",
+    "install": "tsd --config tsd.json reinstall",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkQubo/aws-schema-swagger-converter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tkQubo/aws-schema-swagger-converter/issues"
+  },
+  "homepage": "https://github.com/tkQubo/aws-schema-swagger-converter#readme",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "gulp": "^3.9.0",
+    "lodash": "^3.10.1",
+    "rx": "^3.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
