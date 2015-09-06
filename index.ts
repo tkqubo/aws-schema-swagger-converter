@@ -1,8 +1,7 @@
 /// <reference path="node_modules/swagger.d.ts/swagger.d.ts" />
 import * as request from 'request';
 import * as http from 'http';
-
-let s: any = {};
+import * as _ from 'lodash';
 
 let uri = 'http://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/ec2-2015-04-15.normal.json';
 request.get(uri, (err: any, res: http.IncomingMessage, body: any) => {
@@ -12,7 +11,7 @@ request.get(uri, (err: any, res: http.IncomingMessage, body: any) => {
         info: {
             title: aws.metadata.serviceFullName,
             version: aws.metadata.apiVersion,
-            description: aws.documentation
+            description: trimSurroundingTag(aws.documentation)
         },
         paths: {
 
@@ -29,10 +28,20 @@ request.get(uri, (err: any, res: http.IncomingMessage, body: any) => {
     console.log(JSON.stringify(swagger, null, 2));
 });
 
+function trimSurroundingTag(text: string, tagName: string = 'p'): string {
+    let tagStart = `<${tagName}>`;
+    let tagEnd = `</${tagName}>`;
+    if (!_.startsWith(text, tagStart) || !_.endsWith(text, tagEnd)) {
+        return text;
+    }
+
+    return text.substr(tagStart.length, text.length - (tagStart.length + tagEnd.length))
+}
+
 function parse(shape: any): Swagger.Schema {
     let model: Swagger.Schema = { };
     model.title = shape.locationName;
-    model.description = shape.documentation;
+    model.description = trimSurroundingTag(shape.documentation);
     switch(shape.type) {
         case 'blob':
         case 'structure':
@@ -63,7 +72,7 @@ function parse(shape: any): Swagger.Schema {
     if (shape.type == 'list' && shape.member) {
         let schema: Swagger.Schema = {
             $ref: `#/definitions/${shape.member.shape}`
-        }
+        };
         model.items = schema;
     }
     return model;
